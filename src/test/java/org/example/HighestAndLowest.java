@@ -13,12 +13,12 @@ public class HighestAndLowest {
 		int min = Integer.MAX_VALUE;
 		int max = Integer.MIN_VALUE;
 
-		for (int i = 0; i < arr.length; i++) {
-			if (Integer.parseInt(arr[i]) > max)
-				max = Integer.parseInt(arr[i]);
-			if (Integer.parseInt(arr[i]) < min)
-				min = Integer.parseInt(arr[i]);
-		}
+        for (String s : arr) {
+            if (Integer.parseInt(s) > max)
+                max = Integer.parseInt(s);
+            if (Integer.parseInt(s) < min)
+                min = Integer.parseInt(s);
+        }
 
 		return max + " " + min;
 	}
