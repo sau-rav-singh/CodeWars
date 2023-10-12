@@ -1,4 +1,4 @@
-package kata;
+package org.example;
 
 public class Mumbling {
 
