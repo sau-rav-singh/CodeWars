@@ -36,3 +36,20 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/.idea/encodings.xml
+/.idea/misc.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
+/out/production/Codewars/org/example/App.class
+/out/test/Codewars/org/example/Average.class
+/out/test/Codewars/org/example/CountVowels.class
+/out/test/Codewars/org/example/Digitize.class
+/out/test/Codewars/org/example/HelloWorld.class
+/out/test/Codewars/org/example/HighestAndLowest.class
+/out/test/Codewars/org/example/Maps.class
+/out/test/Codewars/org/example/Multiply.class
+/out/test/Codewars/org/example/Mumbling.class
+/out/test/Codewars/org/example/Opposite.class
+/out/test/Codewars/org/example/OppositesAttract.class
+/out/test/Codewars/org/example/SmallestInteger.class
+/out/test/Codewars/org/example/StringEndsWithChecker.class
