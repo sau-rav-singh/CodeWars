@@ -1,4 +1,4 @@
-package org.example;
+package org.codewars;
 
 public class OppositesAttract {
 

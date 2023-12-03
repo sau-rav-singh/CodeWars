@@ -1,4 +1,4 @@
-package org.example;
+package org.codewars;
 
 import java.util.Arrays;
 
