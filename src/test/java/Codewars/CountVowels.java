@@ -1,4 +1,4 @@
-package org.codewars;
+package Codewars;
 
 public class CountVowels {
 
