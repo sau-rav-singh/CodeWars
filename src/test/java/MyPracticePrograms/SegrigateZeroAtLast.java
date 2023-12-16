@@ -1,4 +1,4 @@
-package MyPrograms;
+package MyPracticePrograms;
 
 //Segregate Zeroes at last
 public class SegrigateZeroAtLast {

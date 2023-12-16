@@ -1,4 +1,4 @@
-package MyPrograms;
+package MyPracticePrograms;
 
 
 //WAP to count occurrence of each element in array

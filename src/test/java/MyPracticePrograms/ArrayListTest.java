@@ -1,4 +1,4 @@
-package MyPrograms;
+package MyPracticePrograms;
 //Remove duplicate chars from arraylist of strings
 
 import java.util.ArrayList;

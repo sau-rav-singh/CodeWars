@@ -1,4 +1,4 @@
-package MyPrograms;
+package MyPracticePrograms;
 
 public class SortCharArray {
     public static void main(String[] args) {
