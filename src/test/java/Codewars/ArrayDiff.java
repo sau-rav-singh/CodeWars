@@ -1,8 +1,10 @@
 package Codewars;
+
 import java.util.ArrayList;
 
 public class ArrayDiff {
 
+    //Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
     public static void main(String[] args) {
         int[] ans = arrayDiff(new int[]{1, 2, 2, 2, 3}, new int[]{2});
         for (int a : ans) {
@@ -11,17 +13,17 @@ public class ArrayDiff {
     }
 
     public static int[] arrayDiff(int[] a, int[] b) {
-        ArrayList<Integer> resultList=new ArrayList<>();
+        ArrayList<Integer> resultList = new ArrayList<>();
 
-        for(int i:a){
-            boolean found=false;
-            for(int j:b){
-                if(i==j){
-                    found=true;
+        for (int i : a) {
+            boolean found = false;
+            for (int j : b) {
+                if (i == j) {
+                    found = true;
                     break;
                 }
             }
-            if(!found){
+            if (!found) {
                 resultList.add(i);
             }
         }

@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class ArrayMinMax {
 
+    //Write a function that returns both the minimum and maximum number of the given list/array.
+
     public static int minArray(int[] arr) {
 
         return Arrays.stream(arr).min().orElse(arr[0]);
