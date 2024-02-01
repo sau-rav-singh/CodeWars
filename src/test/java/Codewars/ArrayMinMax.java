@@ -7,7 +7,6 @@ public class ArrayMinMax {
     //Write a function that returns both the minimum and maximum number of the given list/array.
 
     public static int minArray(int[] arr) {
-
         return Arrays.stream(arr).min().orElse(arr[0]);
     }
 
@@ -16,9 +15,9 @@ public class ArrayMinMax {
     }
 
     public static int[] minMax(int[] arr) {
-        int[] result=new int[2];
-        result[0]=minArray(arr);
-        result[1]=maxArray(arr);
+        int[] result = new int[2];
+        result[0] = minArray(arr);
+        result[1] = maxArray(arr);
         return result;
     }
 

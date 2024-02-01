@@ -6,7 +6,7 @@ public class ArrayDiff {
 
     //Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
     public static void main(String[] args) {
-        int[] ans = arrayDiff(new int[]{1, 2, 2, 2, 3}, new int[]{2});
+        int[] ans = arrayDiff(new int[]{1, 2, 2, 2, 3,3}, new int[]{2});
         for (int a : ans) {
             System.out.println(a);
         }

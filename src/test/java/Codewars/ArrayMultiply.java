@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class ArrayMultiply {
 
+    //Write a function that returns product of all array elements
+    
     public static void main(String[] args) {
         System.out.println(grow(new int[]{1, 4, 5}));
     }
