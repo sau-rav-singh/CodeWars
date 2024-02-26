@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class PigLatin {
+
+    //Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
     public static String pigIt(String str) {
         return Arrays.stream(str.split(" ")).map(PigLatin::pigify).collect(Collectors.joining(" "));
     }
