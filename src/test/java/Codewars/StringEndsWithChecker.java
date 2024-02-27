@@ -2,11 +2,11 @@ package Codewars;
 
 public class StringEndsWithChecker {
 
+    //Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
         public static boolean solution(String str, String ending) {
         int strLength = str.length();
         int endingLength = ending.length();
 
-        // If the ending string is longer than the original string, it can't be a suffix.
         if (endingLength > strLength) {
             return false;
         }
