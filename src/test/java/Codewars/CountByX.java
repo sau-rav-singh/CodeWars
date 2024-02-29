@@ -1,5 +1,8 @@
 package Codewars;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CountByX {
 
     public static int[] countBy(int x, int n){
@@ -11,7 +14,7 @@ public class CountByX {
     }
 
     public static void main(String[] args) {
-        int[] arr=countBy(2,5);
+        int[] arr=countBy(3,5);
         for(int a:arr){
             System.out.println(a);
         }
