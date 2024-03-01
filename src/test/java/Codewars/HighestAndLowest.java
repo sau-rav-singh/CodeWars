@@ -1,5 +1,7 @@
 package Codewars;
 
+import java.util.Arrays;
+
 public class HighestAndLowest {
 
 	//In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
@@ -10,16 +12,12 @@ public class HighestAndLowest {
 
 	static String highAndLow(String numbers) {
 
-		String[] arr = numbers.split(" ");
-		int min = Integer.MAX_VALUE;
-		int max = Integer.MIN_VALUE;
+		int[] arr = Arrays.stream(numbers.split(" "))
+				.mapToInt(Integer::parseInt)
+				.toArray();
 
-        for (String s : arr) {
-            if (Integer.parseInt(s) > max)
-                max = Integer.parseInt(s);
-            if (Integer.parseInt(s) < min)
-                min = Integer.parseInt(s);
-        }
+		int min = Arrays.stream(arr).min().getAsInt();
+		int max = Arrays.stream(arr).max().getAsInt();
 
 		return max + " " + min;
 	}
