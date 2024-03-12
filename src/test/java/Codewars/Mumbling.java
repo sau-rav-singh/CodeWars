@@ -1,5 +1,8 @@
 package Codewars;
 
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class Mumbling {
 
     public static void main(String[] args) {
@@ -11,17 +14,15 @@ public class Mumbling {
     }
 
     public static String accum(String s) {
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            result.append(Character.toUpperCase(c));
-            for (int j = 0; j < i; j++) {
-                result.append(Character.toLowerCase(c));
-            }
-            if (!(i == s.length() - 1)) {
-                result.append('-');
-            }
-        }
-        return result.toString();
+        return IntStream.range(0, s.length())
+                .mapToObj(i -> {
+                    char c = Character.toUpperCase(s.charAt(i));
+                    String repeatedChars = IntStream.range(0, i)
+                            .mapToObj(j -> Character.toLowerCase(c))
+                            .map(Object::toString)
+                            .collect(Collectors.joining(""));
+                    return c + repeatedChars;
+                })
+                .collect(Collectors.joining("-"));
     }
 }

@@ -15,6 +15,11 @@ public class Runner {
         linkedList1.append(40);
         printListHeadTail(linkedList1);
         linkedList1.printList();
+        linkedList1.removeLastElement();
+        linkedList1.printList();
+        linkedList1.preprend(25);
+        System.out.println("-------------");
+        linkedList1.printList();
 
     }
 
