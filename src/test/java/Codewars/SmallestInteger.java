@@ -9,6 +9,6 @@ public class SmallestInteger {
         System.out.println(findSmallestInt(arr));
     }
     public static int findSmallestInt(int[] args) {
-        return Arrays.stream(args).min().getAsInt();
+        return Arrays.stream(args).min().orElse(Integer.MAX_VALUE);
     }
 }

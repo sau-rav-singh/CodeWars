@@ -47,6 +47,7 @@ public class MyLinkedList {
         Node newNode = new Node(value);
         if (length == 0) {
             head = newNode;
+            tail=newNode;
         } else {
             tail.next = newNode;
         }
@@ -89,16 +90,21 @@ public class MyLinkedList {
 
     public Node removeFirst() {
         if (length == 0) {
-            return null;
+            return null; // List is empty, nothing to remove
         }
-        Node removedNode = head;
-        head = head.next;
+
+        Node removedNode = head; // Store reference to the node being removed
+        head = head.next; // Update head to the next node
+        removedNode.next = null; // Set the 'next' reference of the removed node to null
         length--;
+
         if (length == 0) {
-            tail = null;
+            tail = null; // List is now empty, update tail
         }
+
         return removedNode;
     }
+
 
     public Node get(int index) {
         if (index < 0 || index >= length)

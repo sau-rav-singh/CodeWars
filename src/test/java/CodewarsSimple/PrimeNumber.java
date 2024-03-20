@@ -1,4 +1,4 @@
-package Codewars;
+package CodewarsSimple;
 
 public class PrimeNumber {
 
