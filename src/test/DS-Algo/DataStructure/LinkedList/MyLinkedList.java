@@ -7,7 +7,7 @@ public class MyLinkedList {
     @Getter
     private int length;
 
-    private static class Node {
+    public static class Node {
         int value;
         Node next;
 
@@ -47,7 +47,7 @@ public class MyLinkedList {
         Node newNode = new Node(value);
         if (length == 0) {
             head = newNode;
-            tail=newNode;
+            tail = newNode;
         } else {
             tail.next = newNode;
         }
@@ -162,17 +162,31 @@ public class MyLinkedList {
         return temp;
     }
 
-    public void reverse(){
-        Node temp=head;
-        head=tail;
-        tail=temp;
-        Node after=temp.next;
-        Node before=null;
-        for(int i=0;i<length;i++){
-            after=temp.next;
-            temp.next=before;
-            before=temp;
-            temp=after;
+    public void reverse() {
+        Node temp = head;
+        head = tail;
+        tail = temp;
+        Node after = temp.next;
+        Node before = null;
+        for (int i = 0; i < length; i++) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
         }
+    }
+
+    public Node findMiddleNode() {
+        if (head == null) {
+            return null;
+        }
+        Node hare = head;
+        Node tortoise = head;
+
+        while (hare != null && hare.next != null) {
+            tortoise = tortoise.next;
+            hare = hare.next.next;
+        }
+        return tortoise;
     }
 }

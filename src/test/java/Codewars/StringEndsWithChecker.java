@@ -3,21 +3,16 @@ package Codewars;
 public class StringEndsWithChecker {
 
     //Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
-        public static boolean solution(String str, String ending) {
+    public static boolean solution(String str, String ending) {
+        int endLength = ending.length();
         int strLength = str.length();
-        int endingLength = ending.length();
 
-        if (endingLength > strLength) {
+        if (endLength > strLength) {
             return false;
         }
 
-        for (int i = 0; i < endingLength; i++) {
-            if (str.charAt(strLength - endingLength + i) != ending.charAt(i)) {
-                return false;
-            }
-        }
-
-        return true;
+        String suffix = str.substring(strLength - endLength);
+        return suffix.equals(ending);
     }
 
     public static void main(String[] args) {

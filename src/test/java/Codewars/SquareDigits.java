@@ -11,13 +11,13 @@ public class SquareDigits {
     }
 
     public static int squareDigits(int n) {
+        StringBuilder squaredDigits = new StringBuilder();
         String str = String.valueOf(n);
-        String squaredString = str.chars()
-                .mapToObj(Character::getNumericValue)
-                .map(num -> num * num)
-                .map(Object::toString)
-                .collect(Collectors.joining());
-
+        for (char c : str.toCharArray()) {
+            int digit = Character.getNumericValue(c);
+            squaredDigits.append(digit * digit);
+        }
+        String squaredString = squaredDigits.toString();
         return Integer.parseInt(squaredString);
     }
 
