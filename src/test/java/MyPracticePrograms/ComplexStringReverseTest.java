@@ -3,6 +3,10 @@ package MyPracticePrograms;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class ComplexStringReverseTest {
 
     @Test
@@ -12,28 +16,19 @@ public class ComplexStringReverseTest {
 
     public static String reverseString(String str) {
         char[] inputArray = str.toCharArray();
-        char[] result = new char[inputArray.length];
-
-        // Copy spaces to the result array
-        for (int i = 0; i < inputArray.length; i++) {
-            if (inputArray[i] == ' ') {
-                result[i] = ' ';
+        StringBuilder sb=new StringBuilder();
+        List<Integer> spaceList=new ArrayList<>();
+        for(int i=inputArray.length-1;i>=0;i--){
+            if(inputArray[i]!=' '){
+                sb.append(inputArray[i]);
+            }else{
+                spaceList.add(i);
             }
         }
-
-        // Initialize pointers
-        int j = result.length - 1;
-        for (int i = 0; i < inputArray.length; i++) {
-            // Ignore spaces in the input array
-            if (inputArray[i] != ' ') {
-                // Ignore spaces in the result array
-                if (result[j] == ' ') {
-                    j--;
-                }
-                result[j] = inputArray[i];
-                j--;
-            }
+        Collections.sort(spaceList);
+        for(int i:spaceList){
+            sb.insert(i," ");
         }
-        return String.valueOf(result);
+        return sb.toString();
     }
 }
