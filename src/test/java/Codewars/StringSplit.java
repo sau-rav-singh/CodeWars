@@ -1,17 +1,19 @@
 package Codewars;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class StringSplit {
 //Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
     public static void main(String[] args) {
-        String[] stringArray = solution("abc");
+        String[] stringArray = solution("abcdefh");
         for (String str : stringArray) {
             System.out.println(str);
         }
-    }
 
+    }
     public static String[] solution(String s) {
         List<String> list = new ArrayList<>();
         char[] charArray = s.toCharArray();
@@ -24,4 +26,5 @@ public class StringSplit {
 
         return list.toArray(new String[0]);
     }
+
 }

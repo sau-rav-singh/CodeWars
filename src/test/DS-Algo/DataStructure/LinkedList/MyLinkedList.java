@@ -23,10 +23,6 @@ public class MyLinkedList {
         length = 1;
     }
 
-    MyLinkedList() {
-
-    }
-
     public int getHeadValue() {
         return head.value;
     }
@@ -77,7 +73,7 @@ public class MyLinkedList {
         return temp;
     }
 
-    public void preprend(int value) {
+    public void prepend(int value) {
         Node newNode = new Node(value);
         if (length == 0) {
             head = newNode;
@@ -90,16 +86,16 @@ public class MyLinkedList {
 
     public Node removeFirst() {
         if (length == 0) {
-            return null; // List is empty, nothing to remove
+            return null;
         }
 
-        Node removedNode = head; // Store reference to the node being removed
-        head = head.next; // Update head to the next node
-        removedNode.next = null; // Set the 'next' reference of the removed node to null
+        Node removedNode = head;
+        head = head.next;
+        removedNode.next = null;
         length--;
 
         if (length == 0) {
-            tail = null; // List is now empty, update tail
+            tail = null;
         }
 
         return removedNode;
@@ -129,7 +125,7 @@ public class MyLinkedList {
         if (index < 0 || index >= length)
             return false;
         if (index == 0) {
-            preprend(value);
+            prepend(value);
             return true;
         }
         if (index == length - 1) {
@@ -188,5 +184,43 @@ public class MyLinkedList {
             hare = hare.next.next;
         }
         return tortoise;
+    }
+
+    public boolean hasLoop(){
+        if(head==null)
+            return false;
+        Node fast=head,slow=head;
+        while(fast!=null&&fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Node findKthFromEnd(int k) {
+        if (head == null || k <= 0) {
+            return null;
+        }
+        Node fastPtr = head;
+        Node slowPtr = head;
+
+        // Move fastPtr k steps ahead
+        for (int i = 0; i < k; i++) {
+            if (fastPtr == null) {
+                return null; // Less than k nodes in the list
+            }
+            fastPtr = fastPtr.next;
+        }
+
+        // Move both pointers simultaneously until fastPtr reaches the end
+        while (fastPtr != null) {
+            fastPtr = fastPtr.next;
+            slowPtr = slowPtr.next;
+        }
+
+        return slowPtr;
     }
 }
