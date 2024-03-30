@@ -12,19 +12,12 @@ public class DuplicateEncoder {
     }
 
     static String encode(String word){
-        char[] wordArray = word.toCharArray();
-        HashMap<Character, Integer> map = new HashMap<>();
-
-        for (char c : wordArray) {
-            map.put(c, map.getOrDefault(c, 0) + 1);
-        }
-
+        word = word.toLowerCase();
         StringBuilder result = new StringBuilder();
-
-        for (char c : wordArray) {
-            result.append(map.get(c) == 1 ? "(" : ")");
+        for (int i = 0; i < word.length(); ++i) {
+            char c = word.charAt(i);
+            result.append(word.lastIndexOf(c) == word.indexOf(c) ? "(" : ")");
         }
-
         return result.toString();
     }
 }
