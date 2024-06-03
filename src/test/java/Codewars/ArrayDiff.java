@@ -1,30 +1,30 @@
 package Codewars;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ArrayDiff {
 
-    //Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
     public static void main(String[] args) {
-        int[] ans = arrayDiff(new int[]{1, 2, 2, 2, 3,3}, new int[]{2});
+        int[] ans = arrayDiff(new int[]{1, 2, 2, 2, 3, 3}, new int[]{2});
         for (int a : ans) {
             System.out.println(a);
         }
     }
 
-    public static boolean isPresent(int[] array,int num){
-        return Arrays.stream(array).anyMatch(i->i==num);
-    }
-
-    public static int[] arrayDiff(int[] a, int[] b){
-        List<Integer> arrayList=new ArrayList<>();
-        for(int i:a){
-            if(!isPresent(b,i)){
-                arrayList.add(i);
-            }
+    public static int[] arrayDiff(int[] a, int[] b) {
+        if (b.length == 0) {
+            return a;
         }
-        return arrayList.stream().mapToInt(i->i).toArray();
+
+        Set<Integer> setB = new HashSet<>();
+        for (int num : b) {
+            setB.add(num);
+        }
+
+        return Arrays.stream(a)
+                .filter(num -> !setB.contains(num))
+                .toArray();
     }
 }
