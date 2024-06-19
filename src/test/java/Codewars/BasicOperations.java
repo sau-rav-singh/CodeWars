@@ -4,6 +4,7 @@ public class BasicOperations {
 
     public static void main(String[] args) {
 
+        System.out.println(basicMath("+",2,4));
     }
 
     public static Integer basicMath(String op, int v1, int v2) {
