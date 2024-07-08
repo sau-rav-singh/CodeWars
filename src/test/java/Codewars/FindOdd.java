@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FindOdd {
-    //Given an array of integers, find the one that appears an odd number of times.
-//[1,1,2] should return 2, because it occurs 1 time (which is odd).
+    //Given an array of integers, find the one that appears an odd number of times.[1,1,2] should return 2, because it occurs 1 time (which is odd).There will always be only one integer that appears an odd number of times.
+
     public static void main(String[] args) {
-        int[] arr = {1, 3,4,1, 1};
+        int[] arr = {1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1};
         System.out.println(findIt(arr));
     }
 
