@@ -1,28 +1,37 @@
 package Codewars;
 
+import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Mumbling {
 
     public static void main(String[] args) {
 //		accum("abcd") -> "A-Bb-Ccc-Dddd"
-//		accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-//		accum("cwAt") -> "C-Ww-Aaa-Tttt"
 
-        System.out.println(accum("abcd"));
+        System.out.println(mumble("abcd"));
+        System.out.println(mumble2("abcd"));
     }
 
-    public static String accum(String s) {
-        return IntStream.range(0, s.length())
-                .mapToObj(i -> {
-                    char c = Character.toUpperCase(s.charAt(i));
-                    String repeatedChars = IntStream.range(0, i)
-                            .mapToObj(j -> Character.toLowerCase(c))
-                            .map(Object::toString)
-                            .collect(Collectors.joining(""));
-                    return c + repeatedChars;
-                })
+    public static String mumble(String s) {
+        var chars = s.split("");
+        return IntStream.range(0, chars.length)
+                .mapToObj(i -> chars[i].toUpperCase() + chars[i].toLowerCase().repeat(i))
                 .collect(Collectors.joining("-"));
+    }
+
+    public static String mumble2(String s) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            if (i > 0) {
+                result.append('-');
+            }
+            result.append(Character.toUpperCase(s.charAt(i)));
+            for (int j = 0; j < i; j++) {
+                result.append(Character.toLowerCase(s.charAt(i)));
+            }
+        }
+        return result.toString();
     }
 }
