@@ -3,37 +3,35 @@ package InterviewBit;
 import org.testng.Assert;
 
 public class FizzBuzz {
+
+    //Given a positive integer A, return an array of strings with all the integers from 1 to N.
+
+    //But for multiples of 3 the array should have “Fizz” instead of the number.
+
+    //For the multiples of 5, the array should have “Buzz” instead of the number.
+
+    //For numbers which are multiple of 3 and 5 both, the array should have “FizzBuzz” instead of the number.
+
     public static void main(String[] args) {
-        String expected = "[1 2 Fizz 4 Buzz]";
-        String actual = fizzBuzz(5);
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(fizzBuzz(5), "1 2 Fizz 4 Buzz");
     }
 
     public static String fizzBuzz(int A) {
-        String[] strArray = new String[A]; // Create array of size A
-
-        for (int i = 1; i <= A; i++) {
-            if (i % 15 == 0) {
-                strArray[i - 1] = "FizzBuzz";
-            } else if (i % 3 == 0) {
-                strArray[i - 1] = "Fizz";
-            } else if (i % 5 == 0) {
-                strArray[i - 1] = "Buzz";
-            } else {
-                strArray[i - 1] = String.valueOf(i);
-            }
-        }
-
-        // Convert array to the desired output format
-        StringBuilder result = new StringBuilder("[");
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < A; i++) {
-            result.append(strArray[i]);
-            if (i < A - 1) {
-                result.append(" ");
+            if ((i + 1) % 15 == 0) {
+                sb.append("FizzBuzz");
+            } else if ((i + 1) % 5 == 0) {
+                sb.append("Buzz");
+            } else if ((i + 1) % 3 == 0) {
+                sb.append("Fizz");
+            } else {
+                sb.append((i + 1));
+            }
+            if (i != A - 1) {
+                sb.append(" ");
             }
         }
-        result.append("]");
-
-        return result.toString();
+        return sb.toString();
     }
 }
